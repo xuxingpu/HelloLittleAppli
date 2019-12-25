@@ -1,0 +1,31 @@
+<swiper indicator-dots="true" circular="true" autoplay="true" interval="2000">
+  <swiper-item>
+    <image src="/images/post/book01.jpg" />
+  </swiper-item>
+
+  <swiper-item>
+    <image src="/images/post/book02.jpg" />
+  </swiper-item>
+
+  <swiper-item>
+    <image src="/images/post/book03.jpg" />
+  </swiper-item>
+
+  <swiper-item>
+    <image src="/images/post/book04.jpg" />
+  </swiper-item>
+
+  <swiper-item>
+    <image src="/images/post/book05.jpg" />
+  </swiper-item>
+  
+</swiper>
+
+
+<view class="post-container">
+  <view class="post-author-date">
+    <image src="/images/post/book01.jpg" />
+    <text>Jan 28 2017</text>
+  </view>
+  
+</view>
