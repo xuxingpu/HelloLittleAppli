@@ -1,101 +1,44 @@
-<swiper indicator-dots="true" circular="true" autoplay="true" interval="2000">
-  <swiper-item>
-    <image src="/images/post/book01.jpg" />
-  </swiper-item>
+<view>
+  <swiper indicator-dots="true" circular="true" autoplay="true" interval="2000">
+    <swiper-item>
+      <image src="/images/post/book01.jpg" />
+    </swiper-item>
 
-  <swiper-item>
-    <image src="/images/post/book02.jpg" />
-  </swiper-item>
+    <swiper-item>
+      <image src="/images/post/book02.jpg" />
+    </swiper-item>
 
-  <swiper-item>
-    <image src="/images/post/book03.jpg" />
-  </swiper-item>
+    <swiper-item>
+      <image src="/images/post/book03.jpg" />
+    </swiper-item>
 
-  <swiper-item>
-    <image src="/images/post/book04.jpg" />
-  </swiper-item>
+    <swiper-item>
+      <image src="/images/post/book04.jpg" />
+    </swiper-item>
 
-  <swiper-item>
-    <image src="/images/post/book05.jpg" />
-  </swiper-item>
-  
-</swiper>
+    <swiper-item>
+      <image src="/images/post/book05.jpg" />
+    </swiper-item>
+  </swiper>
 
+  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+    <view class="post-container">
+      <view class="post-author-date">
+        <image src="{{item.postImg}}" />
+        <text>{{item.object.date}}</text>
+      </view>
+      <text class="post-title">{{item.title}}</text>
+      <image class="post-image" src="{{item.avatar}}" mode="asFectFix"/>
+      <text class="post-context" >{{item.content}}</text>
+      <view class="post-like" >
+        <image src="/images/icon/icon-seeTimes.png"/>
+        <text>点击量:{{item.readingNum}}</text>
+        <image src="/images/icon/icon-evaluate01.png"/>
+        <text>点赞:{{item.collectionNum.array[0]}}</text>
+        <image src="/images/icon/icon-dianzan00.png"/>
+        <text>留言:{{item.commentNum}}</text>
+      </view>
+    </view>
+  </block>
 
-<view class="post-container">
-  <view class="post-author-date">
-    <image src="/images/post/book01.jpg" />
-    <text>Jan 28 2017</text>
-  </view>
-
-  <text class="post-title">为自己奋斗</text>
-  <image class="post-image" src="/images/post/fendou.jpg" mode="asFectFix"/>
-  <text class="post-context" >
-    在我们的人生历程中，我们希望自己变成一个什么样的人呢...不管我们希望变成一个怎样的人，对我们来说，只要我们真心实意地去做自己想做的事情，我们就会成功!
-  </text>
-  
-  <view class="post-like" >
-    <image src="/images/icon/icon-seeTimes.png"/>
-    <text>点击量:108</text>
-    
-    <image src="/images/icon/icon-evaluate01.png"/>
-    <text>点赞:92</text>
-
-    <image src="/images/icon/icon-dianzan00.png"/>
-    <text>留言:8</text>
-
-
-  </view>
-</view>
-
-<view class="post-container">
-  <view class="post-author-date">
-    <image src="/images/post/book01.jpg" />
-    <text>Jan 28 2017</text>
-  </view>
-
-  <text class="post-title">设计大师</text>
-  <image class="post-image" src="/images/icon/icon-sheji00.png" mode="asFectFix"/>
-  <text class="post-context" >
-    设计大师...不仅仅是一个称号
-  </text>
-  
-  <view class="post-like" >
-    <image src="/images/icon/icon-seeTimes.png"/>
-    <text>点击量:1080</text>
-    
-    <image src="/images/icon/icon-evaluate01.png"/>
-    <text>点赞:920</text>
-
-    <image src="/images/icon/icon-dianzan00.png"/>
-    <text>留言:833</text>
-
-
-  </view>
-</view>
-
-<view class="post-container">
-  <view class="post-author-date">
-    <image src="/images/post/book01.jpg" />
-    <text>Jan 28 2017</text>
-  </view>
-
-  <text class="post-title">孤本</text>
-  <image class="post-image" src="/images/icon/icon-guben00.png" mode="asFectFix"/>
-  <text class="post-context" >
-    书籍作为文化、知识、思想的载体流传，不幸的是多湮灭于历史长河...我辈能得一孤本,幸甚至哉!
-  </text>
-  
-  <view class="post-like" >
-    <image src="/images/icon/icon-seeTimes.png"/>
-    <text>点击量:108</text>
-    
-    <image src="/images/icon/icon-evaluate01.png"/>
-    <text>点赞:92</text>
-
-    <image src="/images/icon/icon-dianzan00.png"/>
-    <text>留言:8</text>
-
-
-  </view>
 </view>
