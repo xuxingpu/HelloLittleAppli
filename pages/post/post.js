@@ -62,14 +62,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("onload:页面被渲染")
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("onload:页面被显示")
   },
 
   /**
@@ -83,7 +81,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log("onload:页面被卸载")
+    console.log("onload:页面卸载")
   },
 
   /**
