@@ -1,0 +1,19 @@
+<template name="postItemTpl">
+  <view class="post-container">
+    <view class="post-author-date">
+      <image src="{{postImg}}" />
+      <text>{{date}}</text>
+    </view>
+    <text class="post-title">{{title}}</text>
+    <image class="post-image" src="{{avatar}}" mode="asFectFix" />
+    <text class="post-context">{{content}}</text>
+    <view class="post-like">
+      <image src="/images/icon/icon-seeTimes.png" />
+      <text>点击量:{{readingNum}}</text>
+      <image src="/images/icon/icon-evaluate01.png" />
+      <text>点赞:{{collectionNum}}</text>
+      <image src="/images/icon/icon-dianzan00.png" />
+      <text>留言:{{commentNum}}</text>
+    </view>
+  </view>
+</template>

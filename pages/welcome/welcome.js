@@ -1,5 +1,20 @@
 Page({
 
+  onTapJump: function(event) {
+    wx.navigateTo({
+      url: '../post/post',
+      success:function(){
+        console.log("jump success")
+      },
+      fail:function(){
+        console.log("jump failed")
+      },
+      complete:function(){
+        console.log("jump complete")
+      }
+    })
+  },
+
   /**
    * 页面的初始数据
    */
@@ -11,35 +26,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+    console.log("页面welcome隐藏")
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    console.log("welcome页面卸载")
   },
 
   /**
