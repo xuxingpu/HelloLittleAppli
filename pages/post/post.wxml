@@ -1,3 +1,4 @@
+<import src="/pages/post-item/post-item-tpl.wxml" />
 <view>
   <swiper indicator-dots="true" circular="true" autoplay="true" interval="2000">
     <swiper-item>
@@ -21,24 +22,7 @@
     </swiper-item>
   </swiper>
 
-  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
-    <view class="post-container">
-      <view class="post-author-date">
-        <image src="{{item.postImg}}" />
-        <text>{{item.object.date}}</text>
-      </view>
-      <text class="post-title">{{item.title}}</text>
-      <image class="post-image" src="{{item.avatar}}" mode="asFectFix"/>
-      <text class="post-context" >{{item.content}}</text>
-      <view class="post-like" >
-        <image src="/images/icon/icon-seeTimes.png"/>
-        <text>点击量:{{item.readingNum}}</text>
-        <image src="/images/icon/icon-evaluate01.png"/>
-        <text>点赞:{{item.collectionNum.array[0]}}</text>
-        <image src="/images/icon/icon-dianzan00.png"/>
-        <text>留言:{{item.commentNum}}</text>
-      </view>
-    </view>
+  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="post1">
+    <template is="postItemTpl" data="{{...item}}" />
   </block>
-
 </view>
