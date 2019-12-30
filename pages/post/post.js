@@ -1,5 +1,10 @@
 // pages/post/post.js
-var dataObj = require("../../data/data.js");
+/**
+ * 缓存数据库DBPost.js的prototype引入方式
+ * var DBPost = require("../../db/DBPost.js").DBPost;
+ */
+//缓存数据库DBPost.js的ES6引入方式
+import {DBPost} from '../../db/DBPost.js';
 Page({
   /**
    * 页面的初始数据
@@ -10,9 +15,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
+    var dbPost = new DBPost();
     this.setData({
-      postList: dataObj.postList
-    })
+      postList:dbPost.getAllPostData()
+    });
   },
 
   /**
