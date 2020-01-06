@@ -6,6 +6,8 @@
 //缓存数据库DBPost.js的ES6引入方式
 import {DBPost} from '../../db/DBPost.js';
 Page({
+
+
   /**
    * 页面的初始数据
    */
@@ -64,5 +66,14 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+  onTapToDetail(event){
+    var postId = event.currentTarget.dataset.postId;
+    console.log("postId="+postId);
+    wx.navigateTo({
+      url: 'post-detail/post-detail?postId='+postId,
+    })
   }
+
 })

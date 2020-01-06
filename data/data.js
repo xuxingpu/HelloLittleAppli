@@ -23,7 +23,7 @@ var postList = [{
   },
   {
     date: "Jan 29 2017",
-    title: "记忆力的春节",
+    title: "记忆里的春节",
     postImg: "/images/post/post-1.jpg",
     avatar: "/images/avatar/avatar-3.png",
     content: "年少时,有儿样东西,是春节里必不可少的:烟花、新衣、凉菜、压岁钱、饺子。年份大小年，有的地方是腊月二十三过小年，二有的地方是腊月二十四...",

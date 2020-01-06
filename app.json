@@ -2,11 +2,12 @@
   "pages": [
     "pages/welcome/welcome",
     "pages/post/post",
+    "pages/post/post-detail/post-detail",
     "pages/coffe/coffe"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#4A6141",
+    "navigationBarBackgroundColor": "#999900",
     "navigationBarTitleText": "徐兴朴的第一个微信小程序",
     "navigationBarTextStyle": "white"
   },

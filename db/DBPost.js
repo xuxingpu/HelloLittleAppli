@@ -28,8 +28,9 @@ module.exports={
 */
 
 class DBPost{
-  constructor(url){
-    this.storageKeyName='postList';
+  constructor(postId) {
+    this.storageKeyName = 'postList';
+    this.postId = postId;
   }
 
   //得到全部文章信息
@@ -46,6 +47,22 @@ class DBPost{
   execStorageSync(data){
     wx.setStorageSync(this.storageKeyName, data);
   }
+
+  //根据id获取文章数据
+  getPostItemById(){
+    var postData = this.getAllPostData();
+    var len = postData.length;
+    for(var i=0;i<len;i++){
+      if(postData[i].postId == this.postId){
+        return{
+          //当前文章在缓存数据库中的序号
+          index: i,
+          data:postData[i]
+        }
+      }
+    }
+  }
+
 };
 
 export{DBPost}
