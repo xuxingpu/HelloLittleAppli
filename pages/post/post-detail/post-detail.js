@@ -19,7 +19,7 @@ Page({
     this.dbPost = new DBPost(postId);
     this.postData = this.dbPost.getPostItemById().data;
     this.setData({
-      post:this.postData
+      post: this.postData
     })
   },
 
@@ -27,7 +27,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    /* 动态设置导航栏标题 注意方法setNavigationBarTitle只能在onReady函数中设置,也就是说页面渲染完成后才设置动态导航栏标题,否则不能生效 */
+    /* 动态设置导航栏标题 */
     wx.setNavigationBarTitle({
       title: this.postData.title
     })
@@ -37,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
