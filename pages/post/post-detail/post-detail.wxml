@@ -13,16 +13,21 @@
 
 <!-- 实现评论、收藏、点赞功能模板 -->
 <view class="tool">
+  <!-- 点赞 -->
   <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
-    <image src="/images/icon/wx_app_like.png"/>
+    <!-- wx:if wx:else -->
+    <image wx:if="{{post.collectionStatus}}" src="/images/icon/yishoucang.png"/>
+    <image wx:else src="/images/icon/weishoucang.png"/>
     <text>{{post.upNum}}</text>
   </view>
+  <!-- 评论 -->
   <view class="tool-item comment" catchtap="onCommentTap" data-post-id="{{post.postId}}">
     <image src="/images/icon/wx_app_message.png"/>
     <text>{{post.commentNum}}</text>
   </view>
+  <!-- 收藏 -->
   <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
-    <image src="/images/icon/wx_app_collect.png"/>
+    <image src="/images/icon/shoucang.png"/>
     <text>{{post.collectionNum}}</text>
   </view>
 </view>
