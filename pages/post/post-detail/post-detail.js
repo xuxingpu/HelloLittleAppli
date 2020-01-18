@@ -15,7 +15,6 @@ Page({
   onLoad: function (options) {
     var postId = options.postId;
     //这里options.postId中的“postId”必须同post.js中navigateTo中url的query参数名称保持一致
-    console.log("postDetail获取到postId=" + postId);
     this.dbPost = new DBPost(postId);
     this.postData = this.dbPost.getPostItemById().data;
     this.setData({
@@ -73,5 +72,61 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 收藏操作
+   */
+  onCollectionTap(){
+    //dbPost对象已经在onload函数里被保存到this变量中,无需再次实例化
+    var newDate = this.dbPost.collect();
+
+    //重新绑定数据.注意,不要将整个newData全部作为setData的参数 应当有选择的更新部分数据
+    this.setData({
+      'post.collectionStatus':newDate.collectionStatus,
+      'post.collectionNum': newDate.collectionNum
+    })
+    //交互反馈
+    wx.showToast({
+      title: newDate.collectionStatus?"收藏成功":"取消收藏",
+      duration:1000,
+      icon:"success",
+      mask:true
+    })
+  },
+
+  /**
+   * 点赞操作
+   */
+  onUpTap(){
+    var newDate = this.dbPost.up();
+    this.setData({
+      'post.upNum': newDate.upNum,
+      'post.upStatus': newDate.upStatus
+    })
+
+    //交互反馈
+    wx.showToast({
+      title: newDate.upStatus ? "点赞成功" : "取消点赞",
+      duration: 1000,
+      icon: "success",
+      mask: true
+    })
+  },
+
+  /**
+   * 评论操作
+   */
+  onCommentTap: function(event){
+    var id = event.currentTarget.dataset.postId;
+    wx.navigateTo({
+      url: '../post-comment/post-comment?id='+id,
+      /*success: function(res) {
+        console.log("评论操作成功");
+      },
+      fail: function(res) {},
+      complete: function(res) {},*/
+    })
   }
+
 })

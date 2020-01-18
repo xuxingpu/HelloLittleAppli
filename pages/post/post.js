@@ -70,7 +70,6 @@ Page({
 
   onTapToDetail(event){
     var postId = event.currentTarget.dataset.postId;
-    console.log("postId="+postId);
     wx.navigateTo({
       url: 'post-detail/post-detail?postId='+postId,
     })

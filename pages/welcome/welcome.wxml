@@ -1,8 +1,8 @@
 <view class="container">
-  <image class="coffePage" src="/images/coffe/coffe01.jpg"></image>
-  <text class="motto">Hello,雀巢咖啡</text>
+  <image class="coffePage" src="/images/coffe/fengmian.jpg"></image>
+  <text class="motto">泛  舟  书  海</text>
 
   <view class="journey-container" catchtap="onTapJump">
-    <text class="journey">开启小程序之旅</text>
+    <text class="journey">轻叩启航</text>
   </view>
 </view>
