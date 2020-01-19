@@ -1,2 +1,9 @@
 <!--pages/post/psot-comment/post-comment.wxml-->
-<text>pages/post/psot-comment/post-comment.wxml</text>
+<view class="comment-detail-box">
+  <view class="comment-main-box">
+    <view class="comment-title">评论....(共{{comments.length}}条)</view>
+
+    
+  </view>
+
+</view>

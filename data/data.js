@@ -1,15 +1,15 @@
 var postList = [{
     date: "Jan 29 2017",
-    title: "为自己奋斗",
-    postImg: "/images/post/book01.jpg",
-    avatar: "/images/post/fendou.jpg",
-    content: "在我们的人生历程中，我们希望自己变成一个什么样的人呢...不管我们希望变成一个怎样的人，对我们来说，只要我们真心实意地去做自己想做的事情，我们就会成功!",
+    title: "凡人修仙传",
+    postImg: "/images/xiaoshuo/fanrenxiuxianzhuan.png",
+    avatar: "/images/xiaoshuo/fanrenxiuxianzhuan01.png",
+    content: "一介凡躯,跻身神界。何故？唯命而已...",
     readingNum: 108,
     collectionNum: 92,
     commentNum: 8,
-    author:"林白衣",
+    author:"忘语",
     dateTime:"24小时前",
-    detail:"冰棍与雪糕绝对不是同一个东西.3到5毛钱的雪糕犹如现在的哈根达斯,而5分到1毛的冰棍就像现在的老冰棒.时过境迁,当年的老冰棍也随着童年的记忆消失不见踪影.记得小时候,没到傍晚时分,总有一个老人推着一辆小车,小车的后架子上放着一个白色泡沫盒子.老人一边推车,一遍喊着:雪糕/冰棍儿...",
+  detail:"小名二愣子，天南越国镜州青牛镇五里沟人氏，燕族人。相貌普通，皮肤黝黑，家中排行老四，童年被三叔介绍到七玄门，因身具灵根(四伪灵根缺金)，可修炼长春功而被墨大夫收为弟子，从此踏上修仙之路。为人意志坚定，无利不起早，行事低调，不好面子，不逞英雄，擅长逃命，心事缜密，心智坚韧，果敢狠绝，见机行事，进退有据。一路坚苦修炼，最终飞升仙界。",
     postId:1,
     music:{
       url:"http://ws.stream.qqmusic.qq.com/C100001Dc80Z3qPj2Z.m4a?fromtag=38",
@@ -19,7 +19,28 @@ var postList = [{
     collectionStatus:true,
     upStatus:false,
     upNum:11,
-    comments:[]
+    comments:[
+      {
+        username: '青石',
+        avatar: '/images/avatar/avatar-3.png',
+        create_time: '1584723344',
+        content: {
+          txt: '从高一追到大四,后来已经不记得故事的情节..',
+          img: ["/images/comment/train-1.jpg", "/images/comment/train-2.jpg"],
+          audio: null
+        }
+      }, 
+      {
+        username: '牛虻',
+        avatar: '/images/avatar/avatar-3.png',
+        create_time: '1584723344',
+        content: {
+          txt: '我欲成仙快乐齐天',
+          img: ["/images/comment/train-1.jpg", "/images/comment/train-2.jpg"],
+          audio: null
+        }
+      }
+    ]
   },
   {
     date: "Jan 29 2017",
@@ -111,48 +132,50 @@ var postList = [{
     collectionStatus: false,
     upStatus: false,
     upNum: 2,
-    comments: []
+    comments: [
+      {
+        username: '青石',
+        avatar: '/images/avatar/avatar-3.png',
+        create_time: '1584723344',
+        content: {
+          txt: '哪一年的毕业季,我们挥挥手,来不及说再见,就踏上了远行的火车.',
+          img: ["/images/comment/train-1.jpg", "/images/comment/train-2.jpg"],
+          audio: null
+        }
+      },
+      {
+        username: '水清',
+        avatar: '/images/avatar/avatar-2.png',
+        create_time: '1481018319',
+        content: {
+          txt: '夏日的蝉鸣与夜晚的火车,时常会在未来无数的日子里不断地在我耳边响起,难以忘怀.',
+          img: [],
+          audio: null
+        }
+      },
+      {
+        username: '赤墨',
+        avatar: '/images/avatar/avatar-1.png',
+        create_time: '1484496000',
+        content: {
+          txt: '时光荏苒,自然的吞噬,让太多的老火车站也小时得无影无踪',
+          img: ["/images/comment/train-4.jpg"],
+          audio: null
+        }
+      },
+      {
+        username: '林白',
+        avatar: '/images/avatar/avatar-4.png',
+        create_time: '1484582400',
+        content: {
+          txt: '时光荏苒,自然的吞噬,让太多的老火车站也小时得无影无踪',
+          img: ["/images/comment/train-4.jpg"],
+          audio: { url: "http://123", timeLen: 8 },
+        }
+      }
+    ]
   },
-  {
-    username:'青石',
-    avatar:'/images/avatar/avatar-3.png',
-    create_time:'1584723344',
-    content:{
-      txt:'哪一年的毕业季,我们挥挥手,来不及说再见,就踏上了远行的火车.',
-      img:["/images/comment/train-1.jpg","/images/comment/train-2.jpg"],
-      audio:null
-    }
-  },
-  {
-    username: '水清',
-    avatar: '/images/avatar/avatar-2.png',
-    create_time: '1481018319',
-    content: {
-      txt: '夏日的蝉鸣与夜晚的火车,时常会在未来无数的日子里不断地在我耳边响起,难以忘怀.',
-      img: [],
-      audio: null
-    }
-  },
-  {
-    username: '赤墨',
-    avatar: '/images/avatar/avatar-1.png',
-    create_time: '1484496000',
-    content: {
-      txt: '时光荏苒,自然的吞噬,让太多的老火车站也小时得无影无踪',
-      img: ["/images/comment/train-4.jpg"],
-      audio: null
-    }
-  },
-  {
-    username: '林白',
-    avatar: '/images/avatar/avatar-4.png',
-    create_time: '1484582400',
-    content: {
-      txt: '时光荏苒,自然的吞噬,让太多的老火车站也小时得无影无踪',
-      img: ["/images/comment/train-4.jpg"],
-      audio: {url:"http://123",timeLen:8},
-    }
-  },
+  
   {
     date: "Jan 28 2017",
     title: "孤本",

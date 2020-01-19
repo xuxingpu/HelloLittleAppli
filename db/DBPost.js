@@ -94,10 +94,10 @@ class DBPost{
     var len = itemData.comments.length,
       comment;
     for(var i = 0;i<len;i++){
-      //将comment中的时间戳转换成可阅读格式
-      comment=itemData.comments[i];
       //引入util.js
       var util = require('../util/util.js');
+      //将comment中的时间戳转换成可阅读格式
+      comment=itemData.comments[i];
       comment.create_time=util.getDiffTime(comment.create_time,true);
     }
     return itemData.comments;

@@ -16,7 +16,7 @@ Page({
     var postId = options.id;
     this.dbPost = new DBPost(postId);
     var comments = this.dbPost.getCommentData();
-    console.log(comments);
+    console.log("comments=="+comments);
     //绑定评论数据
     this.setData({
       comments:comments

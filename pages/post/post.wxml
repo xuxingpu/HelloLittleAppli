@@ -1,25 +1,25 @@
 <import src="/pages/post-item/post-item-tpl.wxml" />
 <view>
-  <swiper indicator-dots="true" circular="true" autoplay="true" interval="2000">
+  <swiper indicator-dots="true" circular="true" autoplay="{{true}}" interval="5000">
     <swiper-item>
-      <image src="/images/post/book01.jpg" />
+      <image src="/images/xiaoshuo/fanrenxiuxianzhuancongshu.png" />
     </swiper-item>
 
     <swiper-item>
-      <image src="/images/post/book02.jpg" />
+      <image src="/images/sheke/difengxianchuangye.png" />
     </swiper-item>
 
     <swiper-item>
-      <image src="/images/post/book03.jpg" />
+      <image src="/images/sheke/heitiane.png" />
     </swiper-item>
 
-    <swiper-item>
+    <!-- <swiper-item>
       <image src="/images/post/book04.jpg" />
     </swiper-item>
 
     <swiper-item>
       <image src="/images/post/book05.jpg" />
-    </swiper-item>
+    </swiper-item> -->
   </swiper>
 
   <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx" wx:key="post1">
