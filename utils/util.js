@@ -102,31 +102,7 @@ function getDiffTime(recordTime,yearsFlag){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
-  getDiffTime:getDiffTime
-}
-
-
-module.exports = {
+  getDiffTime: getDiffTime,
   formatTime: formatTime
 }

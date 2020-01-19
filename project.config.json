@@ -69,6 +69,13 @@
 					"pathName": "pages/post/post",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/post/post-comment/post-comment",
+					"pathName": "pages/post/post-comment/post-comment",
+					"query": "postId=1",
+					"scene": null
 				}
 			]
 		}
