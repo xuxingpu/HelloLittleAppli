@@ -43,19 +43,19 @@
 	align-items: center;
 }
 
-.comment-item-header.left-img image{
-	height: 30rpx;
-	width: 30rpx;
+.comment-item-header .left-img image{
+	height: 80rpx;
+	width: 80rpx;
 }
 
-.comment-item-header.left-user{
+.comment-item-header .left-user{
 	margin-left: 30rpx;
 	line-height: 80rpx;
 }
 
-.comment-item-header.right-user text{
+.comment-item-header .right-user text{
 	font-size: 26rpx;
-	color: #212121;
+	color: #2e7e10;
 }
 
 .comment-body{
@@ -73,7 +73,7 @@
 	margin: 10rpx 0;
 }
 
-.commetn-img image{
+.comment-img image{
 	max-width: 32%;
 	margin-right: 10rpx;
 	height: 220rpx;
@@ -91,7 +91,7 @@
 	border-radius: 6rpx;
 }
 
-.comment-voice-item.voice-play{
+.comment-voice-item .voice-play{
 	height: 64rpx;
 	width: 64rpx;
 }
