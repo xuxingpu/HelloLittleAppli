@@ -26,7 +26,7 @@
 
                     <view class="comment-voice" wx:if="{{item.content.audio && item.content.audio.url}}">
                         <!-- <view data-url="{{item.content.audio.url" class="comment-voice-item" catchtap="playAudio"> -->
-                        <view  class="comment-voice-item" catchtap="playAudio">
+                        <view class="comment-voice-item" catchtap="playAudio">
                             <image src="/images/icon/wx_app_voice.png" class="voice-play"></image>
                             <text>{{item.content.audio.timeLen}}</text>
                         </view>
@@ -45,4 +45,25 @@
             </view>
         </block>
     </view>
+
+    <view class="input-box">
+        <view class="send-msg-box">
+            <view hidden="{{useKeyboardFlag}}" class="input-item">
+                <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1044521402,253587945&fm=15&gp=0.jpg" class="comment-icon keyboard-icon"
+                catchtap=" switchInputType "></image>
+
+                <input class="input speak-input{{recodingClass}} " value="按住 说话 " disabled="disabled " catchtouchstart="recordStart " catchtouchend="recordEnd "/>
+            </view>
+
+            <view hidden="{{!useKeyboardFlag}} " class="input-item ">
+                <image class="comment-icon speak-icon " src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3429397262,3029130067&fm=26&gp=0.jpg " catchtap="switchInputType "></image>
+
+                <input class="input keyboard-input " value="{{keyboardInputValue}} " bindinput="bindCommentInput " placeholder="说点什么吧...... "/>
+            </view>
+
+            <image class="comment-icon add-icon " src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579601299899&di=824af35199a418757b71dad78f428ef6&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_pic%2F00%2F97%2F45%2F5356f31f8327d48.jpg "
+            catchtap="sendMoreMsg "></image>
+            <view class="submit-btn " catchtap="submitComment ">发送</view>
+        </view>
+	</view>
 </view>
