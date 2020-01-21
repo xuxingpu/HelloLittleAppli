@@ -62,6 +62,13 @@
 					"pathName": "pages/post/post-detail/post-detail",
 					"query": "postId=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/post/post",
+					"pathName": "pages/post/post",
+					"query": "postId=1",
+					"scene": null
 				}
 			]
 		}

@@ -1,8 +1,8 @@
 <view class="container">
-  <image class="coffePage" src="/images/coffe/fengmian.jpg"></image>
-  <text class="motto">泛  舟  书  海</text>
+  <image class="coffePage" src="http://img2.imgtn.bdimg.com/it/u=4223899515,2512268091&fm=26&gp=0.jpg"></image>
+  <!-- <text class="motto">泛  舟  书  海</text> -->
 
   <view class="journey-container" catchtap="onTapJump">
-    <text class="journey">轻叩启航</text>
+    <text class="journey">泛  舟  书  海</text>
   </view>
 </view>

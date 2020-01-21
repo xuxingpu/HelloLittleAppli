@@ -7,7 +7,7 @@
 
 .coffePage{
   width: 350rpx;
-  height: 350rpx;
+  height: 450rpx;
   
   border-radius: 35px;
 }
@@ -30,8 +30,9 @@
 }
 
 .journey{
-  font-size: 22rpx;
+  font-size: 30rpx;
   font-weight: bold;
+  font-family: KaiTi;
   line-height: 80rpx;
   color: #EA5A3C;
 }

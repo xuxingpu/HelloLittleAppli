@@ -27,7 +27,7 @@
   </view>
   <!-- 点赞 -->
   <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
-    <image wx:if="{{post.upStatus}}" src="/images/icon/dianzanchenggong.png"/>
+    <image wx:if="{{post.upStatus}}" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2178097910,3253184432&fm=26&gp=0.jpg"/>
     <image wx:else src="/images/icon/quxiaodianzan.png"/>
     <text>{{post.upNum}}</text>
   </view>
