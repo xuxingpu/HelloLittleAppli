@@ -8,7 +8,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        //初始化变量值
+        useKeyboardFlag:false,
     },
 
     /**
@@ -90,8 +91,16 @@ Page({
 			current: imgs[imgIdx],//当前显示图片的http连接
 			urls: imgs//需要预览的图片http连接列表
 		})
-	}
+	},
 
+    /**
+     * 评论方式切换:语音/文字
+     */
+    switchInputType: function (event) {
+        this.setData({
+            useKeyboardFlag:!this.data.useKeyboardFlag
+        })
+    }
 
 
 })

@@ -48,12 +48,12 @@
     width: 80rpx;
 }
 
-.comment-item-header .left-user {
+.comment-item-header.left-user {
     margin-left: 30rpx;
     line-height: 80rpx;
 }
 
-.comment-item-header .right-user text {
+.comment-item-header.right-user text {
     font-size: 26rpx;
     color: #2e7e10;
 }
@@ -170,7 +170,7 @@
     background-color: #ccc;
 }
 
-.input-box .input-item .comment-icon.speck-icon {
+.input-box .input-item .comment-icon.speak-icon {
     height: 62rpx;
     width: 62rpx;
 }
