@@ -2,7 +2,7 @@
 <view class="comment-detail-box">
     <view class="comment-main-box">
         <view class="comment-title">评论....(共{{comments.length}}条)</view>
-        <block wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx">
+        <block wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
 
             <view class="comment-item">
 
@@ -33,7 +33,7 @@
                     </view>
 
                     <view class="comment-img" wx:if="{{item.content.img.length!=0}}">
-                        <block wx:for="{{item.content.img}}" wx:for-item="img" wx:for-index="imgIdx">
+                        <block wx:for="{{item.content.img}}" wx:for-item="img" wx:for-index="imgIdx" wx:key="key">
                             <image src="{{img}}" mode="aspectFill" catchtap="previewImg" data-comment-idx="{{idx}}" data-img-idx="{{imgIdx}}"></image>
                         </block>
                     </view>
@@ -49,21 +49,53 @@
     <view class="input-box">
         <view class="send-msg-box">
             <view hidden="{{useKeyboardFlag}}" class="input-item">
-                <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3429397262,3029130067&fm=26&gp=0.jpg" class="comment-icon speak-icon"
+                <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582648143327&di=3c3e5e9fb9f3872ce0cc82806f49c55a&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F18%2F07%2F15%2F150de4dd3fe0b5a0ec51ca2a4880d528.jpg" class="comment-icon speak-icon"
                 catchtap="switchInputType"></image>
 
                 <input class="input speak-input{{recodingClass}}" value="按住 说话" disabled="disabled" catchtouchstart="recordStart" catchtouchend="recordEnd"/>
             </view>
 
             <view hidden="{{!useKeyboardFlag}}" class="input-item">
-                <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1044521402,253587945&fm=15&gp=0.jpg" class="comment-icon keyboard-icon" catchtap="switchInputType"></image>
+                <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=263324147,236208487&fm=26&gp=0.jpg" class="comment-icon keyboard-icon" catchtap="switchInputType"></image>
 
-                <input class="input keyboard-input" value="{{keyboardInputValue}}" bindinput="bindCommentInput" placeholder="说点什么吧......"/>
+                <input class="input keyboard-input" value="{{keyboardInputValue}}" bindinput="bindCommentInput" bindconfirm="submitComment" placeholder="说点什么吧......"/>
             </view>
 
-            <image class="comment-icon add-icon" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579601299899&di=824af35199a418757b71dad78f428ef6&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_pic%2F00%2F97%2F45%2F5356f31f8327d48.jpg"
-            catchtap="sendMoreMsg"></image>
+            <image class="add-icon" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582660692102&di=8e07ccbdd69d38707bde691ceb24a50a&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F37%2F73%2F31573c5e06a1309.jpg" catchtap="sendMoreMsg" hidden="{{sendMoreMsgFlag}}"></image>
+            <image class="add-icon" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582660725058&di=b9427832f28f77aff4421aec4014b7b2&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F01%2F35%2F82%2F30573bf70d7e9f8.jpg" catchtap="sendMoreMsg" hidden="{{!sendMoreMsgFlag}}"></image>
             <view class="submit-btn" catchtap="submitComment">发送</view>
+        </view>
+
+        <!-- 选择图片与拍照面板 -->
+        <view class="send-more-box" hidden="{{!sendMoreMsgFlag}}">
+
+            <view class="send-more-btns-main">
+                <view class="more-btn-item" catchtap="chooseImage" data-category="album">
+                    <view class="more-btn-main">
+                        <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3818659882,1118114167&fm=26&gp=0.jpg"></image>
+                    </view>
+                    <text>照片</text>
+                </view>
+                <view class="more-btn-item" catchtap="chooseImage" data-category="camera">
+                    <view class="more-btn-main">
+                        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582647870488&di=60384677d21a5e4a10b1b3e5fb13ef97&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fcfdefd350c715033471bed96f3f2a33859a46f553c28-C6ZF49_fw658" ></image>
+                    </view>
+                    <text>拍照</text>
+                </view>
+            </view>
+
+            <!-- 显示选择的图片 -->
+            <view class="send-more-result-main" hidden="{{chooseFiles.length==0}}">
+                <block wx:for="{{chooseFiles}}" wx:for-index="idx" wx:key="key">
+                    <!-- 如果删除其中一个,就对其添加deleting样式 -->
+                    <view class="file-box{{deleteIndex==idx?'deleting':''}}">
+                        <view class="img-box">
+                            <image src="{{item}}" mode="aspectFill"></image>
+                            <icon class="remove-icon" type="canel" size="23" color="#B2B2B2" catchtap="deleteIndex" data-idx="{{idx}}"/>
+                        </view>
+                    </view>
+                </block>
+            </view>
         </view>
 	</view>
 </view>
