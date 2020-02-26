@@ -13,21 +13,22 @@
 
 <!-- 实现评论、收藏、点赞功能模板 -->
 <view class="tool">
-  <!-- 点赞 -->
-  <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
+  <!-- 收藏 -->
+  <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
     <!-- wx:if wx:else -->
     <image wx:if="{{post.collectionStatus}}" src="/images/icon/yishoucang.png"/>
     <image wx:else src="/images/icon/weishoucang.png"/>
-    <text>{{post.upNum}}</text>
+    <text>{{post.collectionNum}}</text>
   </view>
   <!-- 评论 -->
   <view class="tool-item comment" catchtap="onCommentTap" data-post-id="{{post.postId}}">
     <image src="/images/icon/wx_app_message.png"/>
     <text>{{post.commentNum}}</text>
   </view>
-  <!-- 收藏 -->
-  <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
-    <image src="/images/icon/shoucang.png"/>
-    <text>{{post.collectionNum}}</text>
+  <!-- 点赞 -->
+  <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
+    <image wx:if="{{post.upStatus}}" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2178097910,3253184432&fm=26&gp=0.jpg"/>
+    <image wx:else src="/images/icon/quxiaodianzan.png"/>
+    <text>{{post.upNum}}</text>
   </view>
 </view>

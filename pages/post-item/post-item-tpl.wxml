@@ -8,11 +8,11 @@
     <image class="post-image" src="{{avatar}}" mode="asFectFix" />
     <text class="post-context">{{content}}</text>
     <view class="post-like">
-      <image src="/images/icon/icon-seeTimes.png" />
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579581488408&di=6c55ded6868d3b4ee40640eb9b5aa79b&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_pic%2F00%2F16%2F07%2F2357932e205efdf.jpg" />
       <text>点击量:{{readingNum}}</text>
       <image src="/images/icon/icon-evaluate01.png" />
       <text>点赞:{{collectionNum}}</text>
-      <image src="/images/icon/icon-dianzan00.png" />
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1579581542477&di=69af5f576d4bf83c9a68a24640f80a1b&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F39%2F95%2F10573cdf4c03a58.jpg" />
       <text>留言:{{commentNum}}</text>
     </view>
   </view>

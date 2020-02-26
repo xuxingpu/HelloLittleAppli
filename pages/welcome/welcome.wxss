@@ -2,25 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ECC0A8;
+  background-color: rgb(250, 250, 250);
 }
 
 .coffePage{
-  width: 200rpx;
-  height: 200rpx;
-  margin-top: 160rpx;
+  width: 350rpx;
+  height: 450rpx;
+  
+  border-radius: 35px;
 }
 
 .motto{
   margin-top: 100rpx;
-  font-size: 32rpx;
+  font-size: 50rpx;
   font-weight: bold;
-  color:#9F4311
+  font-family: KaiTi;
+  color:rgb(10, 9, 9)
 }
 
 .journey-container{
-  margin-top: 200rpx;
-  border:1px solid #EA5A3C;
+  margin-top: 100rpx;
+  border:2px solid rgb(240, 103, 76);
   width:200rpx;
   height: 80rpx;
   border-radius: 5px;
@@ -28,12 +30,13 @@
 }
 
 .journey{
-  font-size: 22rpx;
+  font-size: 30rpx;
   font-weight: bold;
+  font-family: KaiTi;
   line-height: 80rpx;
   color: #EA5A3C;
 }
 
 page{
-  background-color: #ECC0A8;
+  background-color: rgb(250, 248, 248);
 }

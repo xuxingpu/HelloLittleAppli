@@ -1,4 +1,4 @@
-// pages/post/post.js
+// pages/post/post.jsz
 /**
  * 缓存数据库DBPost.js的prototype引入方式
  * var DBPost = require("../../db/DBPost.js").DBPost;
@@ -70,7 +70,6 @@ Page({
 
   onTapToDetail(event){
     var postId = event.currentTarget.dataset.postId;
-    console.log("postId="+postId);
     wx.navigateTo({
       url: 'post-detail/post-detail?postId='+postId,
     })

@@ -5,7 +5,7 @@
 }
 
 .head-image{
-  width: 750rpx;
+  width: 350rpx;
   height: 460rpx;
 }
 
