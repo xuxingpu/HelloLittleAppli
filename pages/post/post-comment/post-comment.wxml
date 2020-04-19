@@ -91,7 +91,7 @@
                     <view class="file-box{{deleteIndex==idx?'deleting':''}}">
                         <view class="img-box">
                             <image src="{{item}}" mode="aspectFill"></image>
-                            <icon class="remove-icon" type="canel" size="23" color="#B2B2B2" catchtap="deleteIndex" data-idx="{{idx}}"/>
+                            <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" catchtap="deleteImage" data-idx="{{idx}}"/>
                         </view>
                     </view>
                 </block>

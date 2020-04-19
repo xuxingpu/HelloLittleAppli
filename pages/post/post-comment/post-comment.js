@@ -14,6 +14,8 @@ Page({
         keyboardInputValue:'',
         //控制是否显示图片选择面板
         sendMoreMsgFlag: false,
+        //容器:保存已选择的图片
+        chooseFiles:[]
     },
 
     /**
@@ -172,6 +174,41 @@ Page({
         this.setData({
             sendMoreMsgFlag: !this.data.sendMoreMsgFlag
         })
+    },
+    
+    //选择本地照片与拍照功能
+    chooseImage: function(event){
+        //已选择图片数组
+        var imgArr = this.data.chooseFiles;
+        //只能上传3张照片,包括拍照
+        var leftCount = 3-imgArr.length;
+        if(leftCount <= 0){
+            return;
+        }
+        //决定当前选择的是哪一种上传图片的方式:1.相册选取 2.拍照
+        var sourceType = [event.currentTarget.dataset.category],
+        that = this;
+        wx.chooseImage({
+            count:leftCount,//指定一次最多可以上传多少张图片
+            sourceType: sourceType,//指定是拍照生成照片还是从手机相册里选择照片
+            success: function(res) {
+                console.log(res)
+                //可以分次选择图片,但总数不能超过3张
+                that.setData({
+                    //tempFilePaths 数组,装载了选择的图片的url
+                    chooseFiles:imgArr.concat(res.tempFilePaths)
+                })
+            },
+        })
+    },
+    //删除已选图片
+    deleteImage: function(event){
+        var index = event.currentTarget.dataset.idx,
+        that = this;
+        that.data.chooseFiles.splice(index,1);
+        that.setData({
+            chooseFiles:that.data.chooseFiles//重新绑定容器
+        });
     }
 
 })
