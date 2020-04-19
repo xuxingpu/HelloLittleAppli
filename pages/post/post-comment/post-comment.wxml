@@ -25,9 +25,9 @@
                     </view>
 
                     <view class="comment-voice" wx:if="{{item.content.audio && item.content.audio.url}}">
-                        <!-- <view data-url="{{item.content.audio.url" class="comment-voice-item" catchtap="playAudio"> -->
-                        <view class="comment-voice-item" catchtap="playAudio">
-                            <image src="/images/icon/wx_app_voice.png" class="voice-play"></image>
+                        <view data-url="{{item.content.audio.url}}" class="comment-voice-item" catchtap="playAudio">
+                            <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=787399809,2932153135&fm=26&gp=0.jpg" 
+                            class="voice-play"></image>
                             <text>{{item.content.audio.timeLen}}</text>
                         </view>
                     </view>

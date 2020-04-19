@@ -15,7 +15,11 @@ Page({
         //控制是否显示图片选择面板
         sendMoreMsgFlag: false,
         //容器:保存已选择的图片
-        chooseFiles:[]
+        chooseFiles:[],
+        //被删除的图片序号
+        deleteIndex:-1,
+        //保存当前正在播放的录音的url
+        currentAudio:''
     },
 
     /**
@@ -30,7 +34,6 @@ Page({
         this.setData({
             comments: comments
         });
-
     },
 
     /**
@@ -119,6 +122,7 @@ Page({
 
     //提交用户评论
     submitComment: function(event) {
+        var imgs = this.data.chooseFiles;
         var newData = {
             username: "青石",
             avatar: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1582432436&di=1ea28437e9d7ee2c1f3539d86c60b7d1&src=http://thumb.1010pic.com/pic10/d/m/404470_1.jpg",
@@ -127,10 +131,11 @@ Page({
             //评论内容
             content: {
                 txt: this.data.keyboardInputValue,
-                txt1: 'this.data.keyboardInputValue'
+                txt1: 'this.data.keyboardInputValue',
+                img:imgs
             },
         };
-        if (!newData.content.txt) {
+        if (!newData.content.txt && imgs.length===0) {
             //如果没有评论内容就不执行任何操作
             return;
         }
@@ -165,7 +170,9 @@ Page({
     //清空输入框
     resetAllDefaultStatus: function(){
         this.setData({
-            keyboardInputValue:""
+            keyboardInputValue:"",
+            chooseFiles:[],
+            sendMoreMsgFlag:false
         });
     },
 
@@ -206,9 +213,90 @@ Page({
         var index = event.currentTarget.dataset.idx,
         that = this;
         that.data.chooseFiles.splice(index,1);
-        that.setData({
-            chooseFiles:that.data.chooseFiles//重新绑定容器
+        setTimeout(function(){
+            that.setData({
+                deleteIndex:-1,
+                chooseFiles:that.data.chooseFiles//重新绑定容器
+            });
+        },500)
+    },
+
+    //开始录音
+    recordStart: function(){
+        var that = this;
+        this.setData({
+            recodingClass:'recoding'
         });
+        //记录录音开始时间
+        this.startTime = new Date();
+        wx.startRecord({
+            success: function(res){
+                //计算录音时长
+                var diff = (that.endTime - that.startTime)/1000;
+                diff = Math.ceil(diff);
+
+                //发送录音
+                that.submitCommentVoiceComment({url:res.tempFilePath,timeLen:diff});
+            },
+            fail: function(res){
+                console.log(res);
+            },
+            complete: function(res){
+                console.log(res);
+            }
+        })
+    },
+
+    //录音结束
+    recordEnd: function(){
+        this.setData({
+            recodingClass: ''
+        });
+        this.endTime = new Date();
+        wx.stopRecord();
+    },
+
+    submitCommentVoiceComment: function(audio){
+        var newData = {
+            username:'慕北',
+            avatar:'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1404977740,2394090196&fm=26&gp=0.jpg',
+            create_time:new Date().getTime()/1000,
+            content:{
+                txt:'xxp 2020-4-19 21:48:09 完成功能点',
+                img:[],
+                audio:audio
+            },
+        };
+        //保存新评论到缓存数据库中
+        this.dbPost.newComment(newData);
+        //显示操作结果
+        this.showCommitSuccessToast();
+        //重新渲染并绑定所有评论
+        this.bindCommentData();
+    },
+
+    //播放评论语音
+    playAudio: function(event){
+        var url = event.currentTarget.dataset.url,
+        that = this;
+
+        //暂停当前录音
+        if(url == this.data.currentAudio){
+            wx.pauseVoice();
+            this.data.currentAudio = ''
+        }
+
+        //播放录音
+        else{
+            this.data.currentAudio = url;
+            wx.playVoice({
+                filePath: url,
+                complete: function(){
+                    //只有当录音播放完毕后才会执行
+                    that.data.currentAudio='';
+                }
+            });
+        }
     }
 
 })
