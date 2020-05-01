@@ -127,6 +127,12 @@ Page({
       fail: function(res) {},
       complete: function(res) {},*/
     })
+  },
+
+  //阅读量+1
+  addReadingTimes: function(){
+      this.dbPost.addReadingTimes();
   }
+
 
 })

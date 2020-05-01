@@ -1,16 +1,16 @@
 <import src="/pages/post-item/post-item-tpl.wxml" />
 <view>
-  <swiper indicator-dots="true" circular="true" autoplay="{{true}}" interval="5000">
+  <swiper indicator-dots="true" circular="true" autoplay="{{true}}" interval="5000" catchtap="onSwiperTap">
     <swiper-item>
-      <image src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4173935161,2371409429&fm=26&gp=0.jpg" />
+      <image src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4173935161,2371409429&fm=26&gp=0.jpg" data-post-id='3'/>
     </swiper-item>
 
     <swiper-item>
-      <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3643604333,2007044152&fm=26&gp=0.jpg" />
+      <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3643604333,2007044152&fm=26&gp=0.jpg" data-post-id='4'/>
     </swiper-item>
 
     <swiper-item>
-      <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3581832740,2295218583&fm=26&gp=0.jpg" />
+      <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3581832740,2295218583&fm=26&gp=0.jpg" data-post-id='5'/>
     </swiper-item>
 
     <!-- <swiper-item>

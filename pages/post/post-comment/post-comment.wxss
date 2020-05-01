@@ -14,8 +14,9 @@
     bottom: 100rpx;
     right: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
-
+/* -webkit-overflow-scrolling: touch; 加入这段代码后，post-comment页面的滑动将非常流畅*/
 .comment-item {
     margin: 20rpx 20rpx 24rpx;
     padding: 24rpx 24rpx 24rpx 0;

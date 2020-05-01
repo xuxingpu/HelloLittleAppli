@@ -34,6 +34,8 @@ Page({
         this.setData({
             comments: comments
         });
+        //阅读计数
+        this.addReadingTimes();
     },
 
     /**

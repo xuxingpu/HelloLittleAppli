@@ -78,7 +78,10 @@ class DBPost {
                 postData.comments.push(newComment);
                 postData.commentNum++;
                 break;
-
+            //阅读计数
+            case 'reading':
+                postData.readingNum++;
+                break;
             default:
                 break;
         }
@@ -122,6 +125,12 @@ class DBPost {
     newComment(newComment) {
         this.updatePostData('comment', newComment);
     }
+
+    //阅读量计数器
+    addReadingTimes() {
+        this.updatePostData('reading');
+    }
+
 };
 
 export {
